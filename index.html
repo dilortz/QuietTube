@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10131a">
+  <meta name="description" content="A simple, distraction-light YouTube video player.">
+  <title>Quietube — Focus Player</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="top">
+      <div class="brand"><span class="mark">▶</span><span>quietube</span></div>
+      <span class="tagline">Just the video. Nothing else.</span>
+    </header>
+
+    <section class="intro">
+      <h1>Watch with fewer distractions.</h1>
+      <p>Paste a YouTube link. Play the video. No home feed, Shorts shelf, or comments.</p>
+    </section>
+
+    <form id="video-form" class="input-row">
+      <label class="sr-only" for="video-url">YouTube video link</label>
+      <input id="video-url" type="url" placeholder="Paste a YouTube link…" autocomplete="off" required>
+      <button type="submit">Play</button>
+    </form>
+    <p id="message" class="message" role="status" aria-live="polite">Works with youtube.com and youtu.be links.</p>
+
+    <section id="player-section" class="player-section" hidden>
+      <div class="player-frame">
+        <iframe id="player"
+          title="YouTube video player"
+          src=""
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerpolicy="strict-origin-when-cross-origin"
+          allowfullscreen></iframe>
+      </div>
+      <div class="player-actions">
+        <button id="clear-button" class="secondary" type="button">Clear video</button>
+        <a id="open-youtube" href="#" target="_blank" rel="noopener noreferrer">Open on YouTube ↗</a>
+      </div>
+    </section>
+
+    <footer>
+      <p>Quietube is an independent player interface and is not affiliated with YouTube.</p>
+      <p>Videos are played using YouTube’s official embedded player.</p>
+    </footer>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
